@@ -1,6 +1,5 @@
 import "chromedriver" 
 import { browser, command, have, be } from "selenidejs" 
-import { Key } from "selenium-webdriver"
 
 let URL = `https://demoqa.com/automation-practice-form` 
 
@@ -8,7 +7,7 @@ describe("Practice Form Test", function () {
   beforeEach(async () => {
     browser.config.windowHeight = "1080" 
     browser.config.windowWidth = "1920" 
-    browser.config.timeout = 2000
+    browser.config.timeout = 10000
     console.log("Start testing")
   })
 
@@ -31,9 +30,12 @@ describe("Practice Form Test", function () {
     await browser.element('.react-datepicker__year-select [value="1989"]').click()
     await browser.element('.react-datepicker__month').click()
     await browser.element('.react-datepicker__day--019').click()
+    await browser.element('#subjectsInput').click()
+    await browser.element('#subjectsInput').type('english')
+    await browser.element('#subjectsInput').pressEnter()
+    await browser.element('#hobbies-checkbox-2').click()
   })
 })
 
-//await browser.executeScript(`document.getElementById('dateOfBirthInput').value = '15 Jul 1995'`)
- // await browser.element("input#dateOfBirthInput").sendKeys(Key.META,'a')
-// await browser.element("input#dateOfBirthInput").sendKeys(Key.DELETE)
+
+
