@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "selenidejs": "^1.4.6",
-    "selenium-webdriver": "^4.32.0"
+    "selenium-webdriver": "^4.33.0"
   }
 }
